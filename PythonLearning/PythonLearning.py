@@ -1,5 +1,9 @@
 print("123")
-i = 102564564564564564564564545645646887878787888888888888888888888888887878
+i = 1
 j = "qwerty"
 print(type(i), i)
 print(type(j))
+k = 3,5
+l = -3.5
+print(type(k), k[0])
+print(type(l), l)

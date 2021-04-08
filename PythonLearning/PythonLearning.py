@@ -1,25 +1,34 @@
-import pygame
-from pygame.locals import *
+def main():
+    x, y = 300, 300
+    width, height = 200, 300
+    draw_house(x, y, width, height)
 
-pygame.init()
 
-window = pygame.display.set_mode((800,600))
-pygame.display.set_caption("Window")
-black = (0,0,0)
-blue = (0,0,205)
-done = False
-x = 0
+def draw_house(x, y, width, height):
+    foundation_height = 0.05 * height
+    walls_width = 0.9 * width
+    walls_height = 0.5 * height
+    roof_height = height - foundation_height - walls_height
 
-while not done:
-    x += 1
-        
-    
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            done  = True
+    draw_house_foundation(x, y, width, foundation_height)
+    draw_house_walls(x, y - foundation_height,  walls_width, walls_height)
+    draw_house_roof(x, y - foundation_height - walls_width, width, roof_height)
 
-    pygame.draw.rect(window,blue,(300 / x, 20*x ,100 + x , 10 * x))
-    pygame.display.flip()
 
-pygame.quit()
+def draw_house_foundation(x, y, width, height):
+    print("Основание", x, y, width, height)
+    pass
 
+
+def draw_house_walls(x, y ,  width, height):
+    print("Стены", x, y, width, height)
+    pass
+
+
+def draw_house_roof(x, y ,  width, height):
+    print("Крыша", x, y, width, height)
+    pass
+
+
+if __name__ == "__main__":
+    main()
